@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width: 170px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+  <a href="cryptosystem.html">Cryptosystem</a>
+  <a href="Block.html">Block Cipher</a>
+  <a href="DES.html">DES</a>
+  <a href= "AES.html"> AES</a>
+</div>
+
+<div class="main">
+  <h2>Introduction To Cryptography</h2><br>
+  
+  
+  <p style="color:rgb(6, 6, 12);font-size:18px;">Cryptography is the study and practice of techniques for secure communication in the presence of third parties called adversaries. It deals with developing and analyzing protocols which prevents malicious third parties from retrieving information being shared between two entities thereby following the various aspects of information security.</p>
+  <p style="color:rgb(6, 6, 12);font-size:18px;"> Secure Communication refers to the scenario where the message or data shared between two parties can’t be accessed by an adversary. In Cryptography, an Adversary is a malicious entity, which aims to retrieve precious information or data thereby undermining the principles of information security.</p>
+  <p style="color:rgb(6, 6, 12);font-size:18px;">Data Confidentiality, Data Integrity, Authentication and Non-repudiation are core principles of modern-day cryptography.</p>
+  <p style="color:rgb(6, 6, 12);font-size:18px;"><b>Confidentiality</b> refers to certain rules and guidelines usually executed under confidentiality agreements which ensure that the information is restricted to certain people or places.</p>
+  <p style="color:rgb(6, 6, 12);font-size:18px;"><b>Data integrity</b> refers to maintaining and making sure that the data stays accurate and consistent over its entire life cycle.</p>
+  <p style="color:rgb(6, 6, 12);font-size:18px;"><b>Authentication</b> is the process of making sure that the piece of data being claimed by the user belongs to it.</p>
+  <p style="color:rgb(6, 6, 12);font-size:18px;"><b>Non-repudiation</b> refers to ability to make sure that a person or a party associated with a contract or a communication cannot deny the authenticity of their signature over their document or the sending of a message.</p>
+</div>
+   
+</body>
+</html> 

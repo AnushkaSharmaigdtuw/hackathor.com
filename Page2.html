@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   
+
+</head>
+<body>
+      <h1>Encryption and Decryption of Image</h1>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><b>Step 1</b> Create a folder and add the images in it which you want to  decrypt</p1><br>
+      
+     
+      
+  
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><b>Step 2</b> Below is the code for Encryption and Decryption of the image.We have used DES encryption scheme</p1><br>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><b>Note:</b>It is recommended to first try it yourself ,then, see the code</p1> <br>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>import java.io.File;</i></p1><br>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>import java.io.FileInputStream;</i></p1><br>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>import java.io.FileOutputStream;</i></p1><br>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>import java.security.InvalidKeyException;</i></p1><br>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>import java.security.Key;</i></p1><br>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>import javax.crypto.KeyGenerator;</i></p1><br>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>import javax.crypto.NoSuchPaddingException;</i></p1><br>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>import java.security.NoSuchAlgorithmException;</i></p1><br>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>import javax.crypto.Cipher;</i></p1><br>
+      <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>import javax.crypto.CipherInputStream;</i></p1><br>
+
+        <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>public class Myclass {</i></p1><br>
+
+
+            <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>public static void encryption()</i></p1><br>
+                <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>throws NoSuchAlgorithmException, NoSuchPaddingException, InvalidKeyException</i></p1><br>
+                    <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>{</i></p1><br>
+
+                        <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>try</i></p1><br>
+                            <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>{</i></p1><br>
+                                <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>Cipher cipher=Cipher.getInstance("DES");</i></p1><br>
+                                    <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>KeyGenerator keyg=KeyGenerator.getInstance("DES");</i></p1><br>
+                                        <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>Key key=keyg.generateKey();</i></p1><br>
+ 
+                                            <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>cipher.init(Cipher.ENCRYPT_MODE, key); </i></p1><br>
+
+                                                <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>CipherInputStream cipt=new CipherInputStream(new FileInputStream(new File("D:\\ID.png")), cipher);</i></p1><br>
+ 
+                                                    <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>FileOutputStream fileip=new FileOutputStream(new File("D:\\ID.png"));</i></p1><br>
+
+                                                        <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>int i;</i></p1><br>
+                                                            <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>while((i=cipt.read())!=-1)</i></p1><br>
+                                                                <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>{</i></p1><br>
+                                                                    <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>fileip.write(i);</i></p1><br>
+<p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>}</i></p1><br>
+
+
+
+                                                                            <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>cipher.init(Cipher.DECRYPT_MODE, key);</i></p1><br>
+  
+                                                                                <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>CipherInputStream ciptt=new CipherInputStream(new FileInputStream(new File("D:\\ID.png")), cipher);</i></p1><br>
+
+                                                                                    <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>FileOutputStream fileop=new FileOutputStream(new File("D:\\ID.png"));</i></p1><br>
+
+                                                                                        <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>int j;</i></p1><br>
+<p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>while((j=ciptt.read())!=-1)</i></p1><br>
+    <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>{</i></p1><br>
+        <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>fileop.write(j);</i></p1><br>
+            <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>}</i></p1><br>
+                <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>}</i></p1><br>
+                    <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>catch(Exception e)</i></p1><br>
+                       
+                        <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>{</i></p1><br>
+                            <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>e.printStackTrace();</i></p1><br>
+                               
+                                        <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>public static void main(String[] args)</i></p1><br>
+                                            <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>{</i></p1><br>
+                                                <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>try</i></p1><br>
+                                                    <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>{</i></p1><br>
+                                                        <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>Myclass.encryption(); </i></p1><br>
+
+                                                            <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>}catch(Exception e)</i></p1><br>
+                                                                <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>{</i></p1><br>
+                                                                    <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>e.printStackTrace();</i></p1><br>
+                                                                        <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>}</i></p1><br>
+
+                                                                            <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>}</i></p1><br>
+                                                                                <p1 style="color:rgb(6, 6, 12);font-size:18px;"><i>}</i></p1><br>
+                                                                                <style>
+                                                                                    .responsive {
+                                                                                      width: 100%;
+                                                                                      max-width: 400px;
+                                                                                      height: auto;
+                                                                                    }
+                                                                                    </style>
+                                                                                  
+                                                                                  <p style="font-family:verdana;"><b>Original Image</p></b>  <img src="download.jpg" alt="Encrypted Image" class="responsive" width="600" height="400">    
+                                                                              <p style="font-family:verdana;"><b>Encrypted Image</p></b>  <img src="img5.png" alt="Encrypted Image" class="responsive" width="600" height="400">
+                                                                              <p style="font-family:verdana;"><b>Decrypted Image</p></b>  <img src="img3.png" alt="Decrypted Image" class="responsive" width="600" height="400">
+                                                                              
+
+                                                                            </body>
+</html>
